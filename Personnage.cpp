@@ -3,6 +3,11 @@
 
 using namespace std;
 
+Personnage::Personnage() : m_vie(100), m_mana(100)
+{
+
+}
+
 Personnage::Personnage(string nomArme, int degatsArme) : m_vie(100), m_mana(100), m_nomArme("Épée rouillée"), m_degatsArme(10)
 {
 
