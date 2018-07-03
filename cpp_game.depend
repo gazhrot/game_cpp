@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1530631110 source:c:\users\abruneaux\code\cpp_game\cpp_game\arme.cpp
+	"Arme.h"
+
+1530630637 c:\users\abruneaux\code\cpp_game\cpp_game\arme.h
+	<iostream>
+	<string>
+
+1530630850 source:c:\users\abruneaux\code\cpp_game\cpp_game\main.cpp
+	<iostream>
+	"Personnage.h"
+
+1530630768 c:\users\abruneaux\code\cpp_game\cpp_game\personnage.h
+	<string>
+	<iostream>
+	"Arme.h"
+
+1530630980 source:c:\users\abruneaux\code\cpp_game\cpp_game\personnage.cpp
+	<string>
+	"Personnage.h"
+

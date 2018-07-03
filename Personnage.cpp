@@ -3,12 +3,17 @@
 
 using namespace std;
 
+Personnage::~Personnage()
+{
+
+}
+
 Personnage::Personnage() : m_vie(100), m_mana(100)
 {
 
 }
 
-Personnage::Personnage(string nomArme, int degatsArme) : m_vie(100), m_mana(100), m_nomArme("Épée rouillée"), m_degatsArme(10)
+Personnage::Personnage(string nomArme, int degatsArme) : m_vie(100), m_mana(100), m_arme(nomArme, degatsArme)
 {
 
 }
@@ -25,7 +30,7 @@ void Personnage::recevoirDegats(int nbDegats)
 
 void Personnage::attaquer(Personnage &cible)
 {
-    cible.recevoirDegats(m_degatsArme);
+    cible.recevoirDegats(m_arme.getDegats());
 }
 
 void Personnage::boirePotionDeVie(int quantitePotion)
@@ -40,12 +45,17 @@ void Personnage::boirePotionDeVie(int quantitePotion)
 
 void Personnage::changerArme(string nomNouvelleArme, int degatsNouvelleArme)
 {
-    m_nomArme = nomNouvelleArme;
-    m_degatsArme = degatsNouvelleArme;
+    m_arme.changer(nomNouvelleArme, degatsNouvelleArme);
 }
 
 bool Personnage::estVivant()
 {
     return m_vie > 0;
+}
 
+void Personnage::afficherEtat() const
+{
+    cout << "Vie : " << m_vie << endl;
+    cout << "Mana : " << m_mana << endl;
+    m_arme.afficher();
 }
